@@ -34,9 +34,27 @@ import java.util.Scanner;
 public class App 
 {
     static Scanner in = new Scanner(System.in);
+    static final String PW = "abc$123";
 
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        App myApp = new App();
+
+        if(myApp.pwprompt().equals(PW))
+        {
+            System.out.println("Welcome!");
+        }
+        else
+        {
+            System.out.println("I don't know you.");
+        }
+
+    }
+
+    public String pwprompt()
+    {
+        System.out.print("What is the password? ");
+        String pw = in.nextLine();
+        return pw;
     }
 }
